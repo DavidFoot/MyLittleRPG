@@ -23,11 +23,11 @@ namespace RPG.Control
         // Update is called once per frame
         void Update()
         {
-            if (GetComponent<Health>().IsDead()) { GetComponent<Mover>().Cancel();return; }
+            if (GetComponent<Health>().IsDead()) { return; }
             if (InterractWithCombat()) return;
             if (InterractWithMovement()) return;
             //Debug.Log("Not There, end of the World");           
-            
+
         }
 
         private bool InterractWithCombat()
@@ -37,11 +37,11 @@ namespace RPG.Control
             {
 
                 CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                if(target == null ) continue;
+                if (target == null) continue;
                 if (!GetComponent<Fighter>().CanAttack(target.gameObject)) continue;
-                
 
-                if (Input.GetMouseButtonDown(0))
+
+                if (Input.GetMouseButton(0))
                 {
                     GetComponent<Fighter>().Attack(target.gameObject);
                 }
@@ -51,7 +51,7 @@ namespace RPG.Control
         }
 
         private bool InterractWithMovement()
-        {   
+        {
             Ray lastRay = GetMouseRay();
             RaycastHit hit;
             bool hasHit = Physics.Raycast(lastRay, out hit);
@@ -68,8 +68,7 @@ namespace RPG.Control
             {
                 return false;
             }
-            
+
         }
     }
 }
-
