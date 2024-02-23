@@ -374,11 +374,11 @@ Transform:
   m_GameObject: {fileID: 133497800}
   serializedVersion: 2
   m_LocalRotation: {x: 0.20104074, y: 0.7895449, z: -0.22368126, w: 0.534947}
-  m_LocalPosition: {x: -47.50792, y: 5.6760607, z: 5.7659693}
+  m_LocalPosition: {x: -49.612053, y: 15.51005, z: 34.325153}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1536597765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &144627439
 PrefabInstance:
@@ -592,11 +592,11 @@ MonoBehaviour:
   m_IgnoreNavMeshObstacle: 1
   m_OverrideTileSize: 0
   m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.06666667
+  m_OverrideVoxelSize: 1
+  m_VoxelSize: 0.03
   m_MinRegionArea: 99
   m_NavMeshData: {fileID: 23800000, guid: 1b4794e799588a741b2a5ad5501fd54f, type: 2}
-  m_BuildHeightMesh: 0
+  m_BuildHeightMesh: 1
 --- !u!4 &278728832 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5021089976413214394, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
@@ -1869,6 +1869,8 @@ Transform:
   m_Children:
   - {fileID: 705507995}
   - {fileID: 110479152}
+  - {fileID: 133497804}
+  - {fileID: 1549551123}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1549551121
@@ -1936,12 +1938,12 @@ Transform:
   m_GameObject: {fileID: 1549551121}
   serializedVersion: 2
   m_LocalRotation: {x: 0.20104074, y: 0.7895449, z: -0.22368126, w: 0.534947}
-  m_LocalPosition: {x: -47.50792, y: 5.6760607, z: 5.7659693}
+  m_LocalPosition: {x: -49.612053, y: 15.51005, z: 34.325153}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 739270702}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1536597765}
   m_LocalEulerAnglesHint: {x: 34.632, y: 113.462, z: 5.45}
 --- !u!114 &1564298774 stripped
 MonoBehaviour:
@@ -2282,7 +2284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6279219727002687903, guid: 6ca17e74522ae8249a6f16af1da8c757, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6279219727002687903, guid: 6ca17e74522ae8249a6f16af1da8c757, type: 3}
       propertyPath: m_Center.x
@@ -2529,5 +2531,3 @@ SceneRoots:
   - {fileID: 1376479969}
   - {fileID: 1585458104}
   - {fileID: 1536597765}
-  - {fileID: 133497804}
-  - {fileID: 1549551123}
