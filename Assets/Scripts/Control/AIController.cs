@@ -20,8 +20,7 @@ namespace RPG.Control
         [SerializeField]  float suspicionTime = 3f;
         [SerializeField]  float pauseBetweenWaypoint = 1.5f;
         [SerializeField]  float waypointDistanceTolerance = 1.5f;
-        [SerializeField]  float patrolSpeedFraction = 0.3f;
-        [SerializeField]  float chaseSpeedFraction = 0.5f;
+        [SerializeField]  float patrolSpeedFraction = 0.4f;
         [SerializeField]  Patrol patrolPath;
         int patrolWaypointIndex = 0;
 
@@ -109,8 +108,6 @@ namespace RPG.Control
 
         private void AttackBehavior()
         {
-            fighter.GetComponent<Mover>().MoveTo(player.transform.position, chaseSpeedFraction);
-            // GetComponent<NavMeshAgent>().destination = player.transform.position;
             fighter.Attack(player);
         }
 

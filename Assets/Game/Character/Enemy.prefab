@@ -132,11 +132,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5815234642095483670, guid: e5914203908d9b044808651838b3ba2a, type: 3}
       propertyPath: m_Radius
-      value: 0.24350554
+      value: 0.38120556
       objectReference: {fileID: 0}
     - target: {fileID: 5815234642095483670, guid: e5914203908d9b044808651838b3ba2a, type: 3}
       propertyPath: m_Center.x
-      value: 0.02779597
+      value: -0.025811315
       objectReference: {fileID: 0}
     - target: {fileID: 5815234642095483670, guid: e5914203908d9b044808651838b3ba2a, type: 3}
       propertyPath: m_Center.y
@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5815234642095483670, guid: e5914203908d9b044808651838b3ba2a, type: 3}
       propertyPath: m_Center.z
-      value: 0.017221928
+      value: -0.02875173
       objectReference: {fileID: 0}
     - target: {fileID: 6101718168110159232, guid: e5914203908d9b044808651838b3ba2a, type: 3}
       propertyPath: m_Name
@@ -207,8 +207,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 5
-  endChaseSpeed: 0.25
   suspicionTime: 4.5
+  pauseBetweenWaypoint: 1.5
+  waypointDistanceTolerance: 1.5
+  patrolSpeedFraction: 0.4
+  patrolPath: {fileID: 0}
 --- !u!4 &5021089976413214394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1416434444134161507, guid: e5914203908d9b044808651838b3ba2a, type: 3}

@@ -31,7 +31,7 @@ namespace RPG.Combat
                 bool notInRange = Vector3.Distance(target.transform.position, GetComponent<Transform>().position) > weaponRange;
                 if (notInRange)
                 {
-                    GetComponent<Mover>().MoveTo(target.transform.position);
+                    GetComponent<Mover>().MoveTo(target.transform.position,0.8f);
                     
                 }
                 else
