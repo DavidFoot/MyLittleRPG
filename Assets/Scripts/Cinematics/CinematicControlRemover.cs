@@ -13,15 +13,15 @@ public class CinematicControlRemover : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        GetComponent<PlayableDirector>().played += OnBegin;
-        GetComponent<PlayableDirector>().stopped += OnEnd;
+        GetComponent<PlayableDirector>().played += DisableControl;
+        GetComponent<PlayableDirector>().stopped += EnableControl;
     }
-    private void OnBegin(PlayableDirector x)
+    private void DisableControl(PlayableDirector x)
     {
         player.GetComponent<ActionScheduler>().CancelCurrentAction();
         player.GetComponent<PlayerController>().enabled = false;
     }
-    private void OnEnd(PlayableDirector x)
+    private void EnableControl(PlayableDirector x)
     {
         player.GetComponent<PlayerController>().enabled = true;
     }

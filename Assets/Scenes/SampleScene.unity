@@ -507,7 +507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178654852}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06413361, y: 0.8768585, z: -0.12210947, w: 0.46053827}
+  m_LocalRotation: {x: -0.19478026, y: 0.801928, z: -0.35675806, w: -0.43783092}
   m_LocalPosition: {x: 2.9657774, y: 20.282528, z: 38.774345}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1492,6 +1492,10 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 1466962864}
+    - target: {fileID: 4165076816372779729, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
+      propertyPath: chaseDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5021089976413214394, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4455
@@ -1614,7 +1618,7 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -3357026078649718307, guid: 3792ddc9150df90449c609d15278a45b, type: 2}
     value: {fileID: 133497801}
-  - key: {fileID: -6867034712658096149, guid: 3792ddc9150df90449c609d15278a45b, type: 2}
+  - key: {fileID: -6109465787297117155, guid: 3792ddc9150df90449c609d15278a45b, type: 2}
     value: {fileID: 178654855}
   m_ExposedReferences:
     m_References:
