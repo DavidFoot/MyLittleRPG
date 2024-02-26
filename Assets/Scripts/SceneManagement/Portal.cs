@@ -9,33 +9,40 @@ namespace RPG.SceneManagement
 {
     public class Portal : MonoBehaviour
     {
-        [SerializeField] int sceneToLoad;
+        [SerializeField] int sceneToLoad = -1;
         enum DestinationIdentifier
         {
             A, B, C, D, E
         }
         [SerializeField] DestinationIdentifier destination;
         [SerializeField] Transform spawnPoint;
+        [SerializeField] float fadeInTime = 2f;
+        [SerializeField] float fadeOutTime = 1f;
+
         public void OnTriggerEnter(Collider other)
         {
             if (other.tag == "Player")
             {
-                StartCoroutine(Transition());
+                StartCoroutine(Transition()); 
             }
         }
         private IEnumerator Transition()
         {
-            print("Enter in a new scene");
+            if (sceneToLoad < 0) {
+                Debug.Log("No scene to load");
+                yield break;
+            }
             DontDestroyOnLoad(gameObject);
+            Fader fader = FindFirstObjectByType<Fader>();
+            yield return fader.FadeIn(fadeInTime);
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
-            // Trouver comment apparaitre sur le spawnpoint du portail suivant
             Portal destinationPortal = GetDestinationPortal();
-            Debug.Log("Destination : " + destinationPortal.destination);
-            // Placer le player sur le spawnPoint du portal
             UpdatePlayer(destinationPortal);
-            print("scene loaded");
+            yield return fader.FadeOut(fadeOutTime);
             Destroy(gameObject);
         }
+
+
         private void UpdatePlayer(Portal portal)
         {
             GameObject player = GameObject.FindWithTag("Player");
