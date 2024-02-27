@@ -18,7 +18,6 @@ namespace RPG.SceneManagement
             cg.alpha = 0;
             while (cg.alpha < 1)
             {
-                
                 cg.alpha  += Time.deltaTime/ fadeInTime;
                 yield return null;
             }
@@ -28,7 +27,6 @@ namespace RPG.SceneManagement
             cg.alpha = 1;
             while (cg.alpha > 0)
             {
-
                 cg.alpha -= Time.deltaTime / fadeOutTime;
                 yield return null;
             }

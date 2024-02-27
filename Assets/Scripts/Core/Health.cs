@@ -13,10 +13,7 @@ namespace RPG.Core
 
         public object CaptureState()
         {
-            Hashtable test = new Hashtable ();
-            test.Add("health", health);
-            test.Add("isDead", isDead);
-            return test;
+            return health;
         }
 
         public bool IsDead()
@@ -26,11 +23,10 @@ namespace RPG.Core
 
         public void RestoreState(object state)
         {
-            Hashtable data = (Hashtable)state;
-            health = (float) data["health"];
-            if((bool)data["isDead"])
+            health = (float)state;
+            if( health <= 0 )
             {
-                Dead();
+                Die();
             }
 
         }
@@ -44,10 +40,10 @@ namespace RPG.Core
             }
             if (health == 0)
             {
-                Dead();
+                Die();
             }
         }
-        private void Dead()
+        private void Die()
         {
             if (isDead) return;
             isDead = true;

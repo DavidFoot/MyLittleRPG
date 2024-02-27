@@ -37,9 +37,11 @@ namespace RPG.SceneManagement
             yield return fader.FadeIn(fadeInTime);
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
             Portal destinationPortal = GetDestinationPortal();
+            destinationPortal.GetComponent<BoxCollider>().enabled = false;
             UpdatePlayer(destinationPortal);
             yield return fader.FadeOut(fadeOutTime);
             Destroy(gameObject);
+            destinationPortal.GetComponent<BoxCollider>().enabled = true;
         }
 
 
