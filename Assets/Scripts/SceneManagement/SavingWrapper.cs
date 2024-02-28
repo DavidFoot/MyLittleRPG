@@ -7,11 +7,20 @@ namespace RPG.SceneManagement
     public class SavingWrapper : MonoBehaviour
     {
         const string defaultFileName="MyLittleRPgSave";
-        void Save()
+        [SerializeField] float fadeOutTime = 1f;
+
+        IEnumerator Start()
+        {
+            Fader fader = FindObjectOfType<Fader>();
+            fader.ImmediateOpacityScreen();
+            yield return GetComponent<SavingSystem>().LoadLastScene(defaultFileName);
+            yield return fader.FadeOut(fadeOutTime);
+        }
+        public void Save()
         {
             GetComponent<SavingSystem>().Save(defaultFileName);
         }
-        private void Load()
+        public void Load()
         {
             GetComponent<SavingSystem>().Load(defaultFileName);
         }

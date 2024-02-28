@@ -35,10 +35,15 @@ namespace RPG.SceneManagement
             DontDestroyOnLoad(gameObject);
             Fader fader = FindFirstObjectByType<Fader>();
             yield return fader.FadeIn(fadeInTime);
+            SavingWrapper wrapper = FindFirstObjectByType<SavingWrapper>();
+            wrapper.Save();
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
+            wrapper.Load();
+            
             Portal destinationPortal = GetDestinationPortal();
             destinationPortal.GetComponent<BoxCollider>().enabled = false;
             UpdatePlayer(destinationPortal);
+            wrapper.Save();
             yield return fader.FadeOut(fadeOutTime);
             Destroy(gameObject);
             destinationPortal.GetComponent<BoxCollider>().enabled = true;

@@ -9,9 +9,14 @@ namespace RPG.SceneManagement
     {
         CanvasGroup cg;
 
+        
         public void Start()
         {
             cg = GetComponent<CanvasGroup>();
+        }
+        public void ImmediateOpacityScreen()
+        {
+            cg.alpha = 1.0f;
         }
         public IEnumerator FadeIn(float fadeInTime)
         {

@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: health
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 7876533663807253334, guid: e5914203908d9b044808651838b3ba2a, type: 3}
+      propertyPath: uniqueIdentifier
+      value: player
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7410449525895688963, guid: e5914203908d9b044808651838b3ba2a, type: 3}
     m_RemovedGameObjects:
