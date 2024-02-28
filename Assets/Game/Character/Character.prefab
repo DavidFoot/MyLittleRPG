@@ -116,9 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03abc44e82f8115498e368441cef0d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponRange: 2
   timeBetweenAttack: 2
-  weaponDamage: 5
+  weaponPosition: {fileID: 0}
+  weapon: {fileID: 11400000, guid: e739318d8806c7445b323603c4c6a8fe, type: 2}
 --- !u!114 &3298084559650567634
 MonoBehaviour:
   m_ObjectHideFlags: 0

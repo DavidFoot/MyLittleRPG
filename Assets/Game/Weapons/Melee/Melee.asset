@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ae3fa75364f12a4ebbc877c6eb34928, type: 3}
-  m_Name: Rapiere
+  m_Name: Melee
   m_EditorClassIdentifier: 
-  animatorOverride: {fileID: 22100000, guid: 5200442e8e634784883db70eac4259b9, type: 2}
-  equippedPrefab: {fileID: 1393844120592861945, guid: dc6c1cd0897ed5547abacd2f66618e4b, type: 3}
-  weaponDamage: 12
-  weaponRange: 3
+  animatorOverride: {fileID: 0}
+  weaponPrefab: {fileID: 0}
+  weaponDamage: 5
+  weaponRange: 2
