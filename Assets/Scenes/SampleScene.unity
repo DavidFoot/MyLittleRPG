@@ -1104,7 +1104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816729112}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.054409713, y: 0.92679864, z: -0.14793053, w: 0.34088197}
+  m_LocalRotation: {x: 0.054409716, y: 0.92679864, z: -0.14793052, w: 0.340882}
   m_LocalPosition: {x: -10.02, y: 5.94, z: 8.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1388,9 +1388,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7830303651866921139, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 945c936ebb698994a8ffe00212711159, type: 2}
+    - target: {fileID: 7830303651866921139, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: weaponDamage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7830303651866921139, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 945c936ebb698994a8ffe00212711159, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2063,7 +2071,7 @@ PrefabInstance:
     - target: {fileID: 7830303651866921139, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 11400000, guid: e739318d8806c7445b323603c4c6a8fe, type: 2}
+      objectReference: {fileID: 11400000, guid: 4a85dd4ef1e862f44a9cb96c5fa673f6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2391,6 +2399,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7830303651866921139, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a85dd4ef1e862f44a9cb96c5fa673f6, type: 2}
     - target: {fileID: 7830303651866921139, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: weaponDamage
       value: 10
@@ -3109,6 +3121,10 @@ PrefabInstance:
       propertyPath: m_StoppingDistance
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7830303651866921139, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a85dd4ef1e862f44a9cb96c5fa673f6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3158,7 +3174,7 @@ PrefabInstance:
     - target: {fileID: 1230157089490101473, guid: 2d37fcae0fa800c4790c376b9ab3d460, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 11400000, guid: 945c936ebb698994a8ffe00212711159, type: 2}
+      objectReference: {fileID: 11400000, guid: 4a85dd4ef1e862f44a9cb96c5fa673f6, type: 2}
     - target: {fileID: 1230157089490101473, guid: 2d37fcae0fa800c4790c376b9ab3d460, type: 3}
       propertyPath: weaponPosition
       value: 

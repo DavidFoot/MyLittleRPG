@@ -360,6 +360,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4227897684169851498, guid: e5914203908d9b044808651838b3ba2a, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a85dd4ef1e862f44a9cb96c5fa673f6, type: 2}
+    - target: {fileID: 4227897684169851498, guid: e5914203908d9b044808651838b3ba2a, type: 3}
       propertyPath: weaponPosition
       value: 
       objectReference: {fileID: 1748798003447816713}
