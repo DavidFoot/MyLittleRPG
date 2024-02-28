@@ -56,6 +56,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4227897684169851498, guid: e5914203908d9b044808651838b3ba2a, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 4588267010284441367, guid: 95036d9e57b6ea348a837c041cd6be4d, type: 3}
+    - target: {fileID: 4227897684169851498, guid: e5914203908d9b044808651838b3ba2a, type: 3}
+      propertyPath: weaponPosition
+      value: 
+      objectReference: {fileID: 7895942009212652511}
+    - target: {fileID: 4227897684169851498, guid: e5914203908d9b044808651838b3ba2a, type: 3}
+      propertyPath: animatorOverrideController
+      value: 
+      objectReference: {fileID: 22100000, guid: 8f76942a0a353be4c8f8b3785853a733, type: 2}
     - target: {fileID: 5815234642095483670, guid: e5914203908d9b044808651838b3ba2a, type: 3}
       propertyPath: m_Radius
       value: 0.30905986
@@ -181,6 +193,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
+--- !u!4 &7895942009212652511 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 461188, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
+  m_PrefabInstance: {fileID: 7895942009212584539}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7895942009212757825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 435482, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}

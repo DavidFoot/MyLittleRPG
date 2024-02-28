@@ -269,32 +269,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 456818, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -80.03
       objectReference: {fileID: 0}
     - target: {fileID: 456818, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -111.459
       objectReference: {fileID: 0}
     - target: {fileID: 456818, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 456818, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 456818, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 456818, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 456818, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 100.704
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -304,6 +288,11 @@ PrefabInstance:
 --- !u!4 &1748798003447810687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 417656, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+  m_PrefabInstance: {fileID: 1748798003447928071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1748798003447816713 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 423694, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
   m_PrefabInstance: {fileID: 1748798003447928071}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6198731153782655705
@@ -363,9 +352,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4227897684169851498, guid: e5914203908d9b044808651838b3ba2a, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a85dd4ef1e862f44a9cb96c5fa673f6, type: 2}
+    - target: {fileID: 4227897684169851498, guid: e5914203908d9b044808651838b3ba2a, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4227897684169851498, guid: e5914203908d9b044808651838b3ba2a, type: 3}
+      propertyPath: weaponPosition
+      value: 
+      objectReference: {fileID: 1748798003447816713}
     - target: {fileID: 4715096989626814728, guid: e5914203908d9b044808651838b3ba2a, type: 3}
       propertyPath: m_Avatar
       value: 

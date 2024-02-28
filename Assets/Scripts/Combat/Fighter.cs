@@ -15,11 +15,24 @@ namespace RPG.Combat
         float timeBetweenAttack = 2f;
 
         [SerializeField]
-        float weaponDamage = 5f;
+        float weaponDamage = 5f;      
+        [SerializeField] Transform weaponPosition = null;
+        [SerializeField] Weapons weapon = null;
+        
 
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
 
+        private void Start()
+        {
+            SpawnWeapon();
+        }
+        private void SpawnWeapon()
+        {
+            if (weapon == null) return;     
+            weapon.Spawn(weaponPosition,GetComponent<Animator>());        
+            
+        }
         void Update()
         {
             timeSinceLastAttack += Time.deltaTime;
