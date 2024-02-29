@@ -1,5 +1,6 @@
 using RPG.Movement;
 using RPG.Core;
+using RPG.Combat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -88,10 +89,21 @@ namespace RPG.Combat
             GetComponent<Animator>().ResetTrigger("Attack");
         }
 
+        public void Shoot()
+        {
+            Hit();
+        }
         public void Hit()
         {
             if (target == null) return;
-            target.TakingDamage(currentWeapon.WeaponDamage);
+            if (currentWeapon.HasProjectile())
+            {
+                Projectile projectile = currentWeapon.LaunchProjectile(rightHand,leftHand,target);
+            }
+            else
+            {
+                target.TakingDamage(currentWeapon.WeaponDamage);
+            }
         }
     }
 }
