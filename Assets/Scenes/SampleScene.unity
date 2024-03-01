@@ -3545,6 +3545,10 @@ PrefabInstance:
       propertyPath: weaponPosition
       value: 
       objectReference: {fileID: 799955154}
+    - target: {fileID: 1230157089490101473, guid: 2d37fcae0fa800c4790c376b9ab3d460, type: 3}
+      propertyPath: timeBetweenAttack
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4846569828041115024, guid: 2d37fcae0fa800c4790c376b9ab3d460, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.1041334

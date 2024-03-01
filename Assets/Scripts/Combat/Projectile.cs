@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isTargetLock)
+        if (isTargetLock && !target.IsDead())
         {
             transform.LookAt(GetAimLocation());
         }
@@ -36,12 +36,13 @@ public class Projectile : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
+        if (target.IsDead()) return;
         if (target == other.GetComponent<Health>())
         {
             target.TakingDamage(damage);
             Destroy(gameObject);
         }
-        //
+        
     }
     private Vector3 GetAimLocation()
     {
