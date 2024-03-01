@@ -154,6 +154,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1257079204911983354, guid: 11a7095e67c9acf468c62bb1bd689cb6, type: 3}
+      propertyPath: effectOnHit
+      value: 
+      objectReference: {fileID: 89694397700245310, guid: e6aa95831f3d42a44a672be7bf97a5d8, type: 3}
+    - target: {fileID: 1257079204911983354, guid: 11a7095e67c9acf468c62bb1bd689cb6, type: 3}
       propertyPath: isTargetLock
       value: 1
       objectReference: {fileID: 0}

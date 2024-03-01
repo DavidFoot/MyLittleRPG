@@ -9,9 +9,13 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] float speed = 1.0f;
     [SerializeField] bool isTargetLock = true;
+    [SerializeField] GameObject effectOnHit = null;
+    [SerializeField] float maxTimeAlive = 4f;
+    [SerializeField] GameObject[] toDestroyonHit;
+    [SerializeField] float lifeTimeAfterDestroy = 2f;
+    
     Health target;
     float damage = 0;
-
 
     // Start is called before the first frame update
     void Start()
@@ -33,14 +37,25 @@ public class Projectile : MonoBehaviour
     {
         this.target = target;   
         this.damage = damage;
+        Destroy(gameObject,maxTimeAlive) ;
     }
     public void OnTriggerEnter(Collider other)
     {
         if (target.IsDead()) return;
         if (target == other.GetComponent<Health>())
         {
+           
             target.TakingDamage(damage);
-            Destroy(gameObject);
+            if(effectOnHit != null)
+            {
+                Instantiate(effectOnHit, GetAimLocation(),transform.rotation);
+            }
+            foreach (var item in toDestroyonHit)
+            {
+                Destroy(item);
+            }
+            
+            Destroy(gameObject, lifeTimeAfterDestroy);
         }
         
     }
