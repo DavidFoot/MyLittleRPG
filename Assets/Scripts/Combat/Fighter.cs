@@ -55,6 +55,10 @@ namespace RPG.Combat
                 }
             }
         }
+        public Health GetCombatTargetHealth()
+        {
+            return target;
+        }
         public bool CanAttack(GameObject combatTarget)
         {
             if (combatTarget == null || combatTarget.GetComponent<Health>().IsDead()) { return false; }   

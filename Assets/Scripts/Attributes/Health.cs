@@ -33,7 +33,10 @@ namespace RPG.Attributes
             }
 
         }
-
+        public float GetHealthPercentage()
+        {
+            return 100 * (health / GetComponent<BaseStats>().getHealth());
+        }
         public void TakingDamage(float damage)
         {
             if (health > 0)
