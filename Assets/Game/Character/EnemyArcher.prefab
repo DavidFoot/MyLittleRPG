@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyArcher
       objectReference: {fileID: 0}
+    - target: {fileID: 714592353458975695, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
+      propertyPath: characterClass
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1141531890879383782, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: health
       value: 25

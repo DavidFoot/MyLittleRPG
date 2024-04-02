@@ -1,8 +1,4 @@
-using RPG.Core;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+using RPG.Attributes;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour

@@ -1,6 +1,4 @@
-using RPG.Core;
-using System;
-using TMPro;
+using RPG.Attributes;
 using UnityEngine;
 
 namespace RPG.Combat
