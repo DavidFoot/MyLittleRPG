@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ae3fa75364f12a4ebbc877c6eb34928, type: 3}
-  m_Name: Fireball
+  m_Name: Melee
   m_EditorClassIdentifier: 
-  animatorOverride: {fileID: 22100000, guid: 5b98829a0ca6ec54591efedcb1ccfb2d, type: 2}
-  equippedPrefab: {fileID: 1113920918530857763, guid: b8b135389a312d24799deb576bf43f72, type: 3}
+  animatorOverride: {fileID: 0}
+  equippedPrefab: {fileID: 0}
   weaponDamage: 3
-  weaponRange: 24
-  isRightHanded: 0
-  projectile: {fileID: 1257079204911983354, guid: f2579fecdff9f444b96861cc024f350a, type: 3}
+  weaponRange: 1.5
+  isRightHanded: 1
+  projectile: {fileID: 0}

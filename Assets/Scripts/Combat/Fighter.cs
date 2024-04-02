@@ -4,10 +4,11 @@ using RPG.Combat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Saving;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] float timeBetweenAttack = 2f;          
         [SerializeField] Transform rightHand = null;
@@ -22,7 +23,12 @@ namespace RPG.Combat
 
         private void Start()
         {
-            EquipWeapon(defaultWeapon);
+            if(currentWeapon == null)
+            {
+                Weapons weapon = Resources.Load<Weapons>(defaultWeapon.name);
+                EquipWeapon(weapon);
+            }
+
         }
         public void EquipWeapon(Weapons weapon)
         {
@@ -104,6 +110,19 @@ namespace RPG.Combat
             {
                 target.TakingDamage(currentWeapon.WeaponDamage);
             }
+        }
+
+        public object CaptureState()
+        {
+            return currentWeapon.name;
+        }
+
+        public void RestoreState(object state)
+        {
+            string weaponName = (string)state;
+            Weapons weapon = Resources.Load<Weapons>(weaponName);
+            EquipWeapon(weapon);
+
         }
     }
 }
