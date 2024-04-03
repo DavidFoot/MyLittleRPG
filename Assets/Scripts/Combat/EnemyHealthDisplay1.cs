@@ -19,7 +19,7 @@ namespace RPG.Combat
             if(EnemyHealth = player.GetCombatTargetHealth())
             {
 
-                GetComponent<TextMeshProUGUI>().text = string.Format("{0:0}%", EnemyHealth.GetHealthPercentage());
+                GetComponent<TextMeshProUGUI>().text = string.Format("{0:0}%", EnemyHealth.GetPercentage());
             }
             else
             {

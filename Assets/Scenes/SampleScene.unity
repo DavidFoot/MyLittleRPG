@@ -1378,7 +1378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1141531890879383782, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: health
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1748798003453326939, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2088,7 +2088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1141531890879383782, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: health
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4165076816372779729, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: patrolPath
@@ -2569,7 +2569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1141531890879383782, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: health
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3511117873411290577, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: m_Enabled
@@ -3504,7 +3504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1141531890879383782, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: health
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4165076816372779729, guid: d1c1017233d4ab64a9de08ceeb96bcc0, type: 3}
       propertyPath: patrolPath
@@ -3679,6 +3679,14 @@ PrefabInstance:
     - target: {fileID: 6351957407985795795, guid: 2d37fcae0fa800c4790c376b9ab3d460, type: 3}
       propertyPath: m_Name
       value: Core
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245879542303024308, guid: 2d37fcae0fa800c4790c376b9ab3d460, type: 3}
+      propertyPath: health
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381773951908798365, guid: 2d37fcae0fa800c4790c376b9ab3d460, type: 3}
+      propertyPath: startingLevel
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2939021679562188685, guid: 2d37fcae0fa800c4790c376b9ab3d460, type: 3}

@@ -8,9 +8,13 @@ namespace RPG.SceneManagement
     {
         const string defaultFileName="MyLittleRPgSave";
         [SerializeField] float fadeOutTime = 1f;
-
-        IEnumerator Start()
+        private void Awake()
         {
+            StartCoroutine(LoadLastScene());
+        }
+        IEnumerator LoadLastScene()
+        {
+            Debug.Log("SavingWrapper Start");
             Fader fader = FindObjectOfType<Fader>();
             fader.ImmediateOpacityScreen();
             yield return GetComponent<SavingSystem>().LoadLastScene(defaultFileName);

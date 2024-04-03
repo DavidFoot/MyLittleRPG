@@ -6,16 +6,16 @@ namespace RPG.Attributes
 {
     public class Health : MonoBehaviour, ISaveable
     {
-        [SerializeField] public float health = -1f;
+        float health = -1f;
         bool isDead = false;
 
         private void Start()
         {
-            if(health < 0)
+            if (health < 0)
             {
                 health = GetComponent<BaseStats>().GetStat(Stat.Health);
             }
-            
+            Debug.Log(this.name + ": " + health);
         }
 
         public object CaptureState()
@@ -31,13 +31,13 @@ namespace RPG.Attributes
         public void RestoreState(object state)
         {
             health = (float)state;
-            if( health <= 0 )
+            if (health <= 0)
             {
                 Die();
             }
 
         }
-        public float GetHealthPercentage()
+        public float GetPercentage()
         {
             return 100 * (health / GetComponent<BaseStats>().GetStat(Stat.Health));
         }
@@ -45,12 +45,15 @@ namespace RPG.Attributes
         {
             return GetComponent<BaseStats>().GetStat(Stat.Health);
         }
-        public void TakingDamage(GameObject instigator , float damage)
+        public float GetHealth()
+        {
+            return health;
+        }
+        public void TakingDamage(GameObject instigator, float damage)
         {
             if (health > 0)
             {
-                health = Mathf.Max(health - damage,0f);
-                print("Vie restante : " + health);
+                health = Mathf.Max(health - damage, 0f);
             }
             if (health == 0)
             {
@@ -62,7 +65,7 @@ namespace RPG.Attributes
         private void AwardExperience(GameObject instigator)
         {
             Experience experience = instigator.GetComponent<Experience>();
-            if( experience == null )
+            if (experience == null)
             {
                 return;
             }
@@ -79,4 +82,3 @@ namespace RPG.Attributes
     }
 
 }
-
