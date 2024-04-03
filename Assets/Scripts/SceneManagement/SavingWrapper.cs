@@ -12,14 +12,21 @@ namespace RPG.SceneManagement
         {
             StartCoroutine(LoadLastScene());
         }
-        IEnumerator LoadLastScene()
+        private IEnumerator LoadLastScene()
         {
             Debug.Log("SavingWrapper Start");
-            Fader fader = FindObjectOfType<Fader>();
-            fader.ImmediateOpacityScreen();
             yield return GetComponent<SavingSystem>().LoadLastScene(defaultFileName);
+        }
+        IEnumerator Start()
+        {
+            Fader fader = FindObjectOfType<Fader>();
+            if (fader != null)
+            {
+                fader.ImmediateOpacityScreen();
+            }
             yield return fader.FadeOut(fadeOutTime);
         }
+        
         public void Save()
         {
             GetComponent<SavingSystem>().Save(defaultFileName);
