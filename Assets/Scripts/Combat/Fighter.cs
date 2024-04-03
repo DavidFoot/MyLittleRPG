@@ -106,11 +106,11 @@ namespace RPG.Combat
             if (target == null) return;
             if (currentWeapon.HasProjectile())
             {
-                Projectile projectile = currentWeapon.LaunchProjectile(rightHand,leftHand,target);
+                Projectile projectile = currentWeapon.LaunchProjectile(rightHand,leftHand,target, gameObject);
             }
             else
             {
-                target.TakingDamage(currentWeapon.WeaponDamage);
+                target.TakingDamage(gameObject, currentWeapon.WeaponDamage);
             }
         }
 

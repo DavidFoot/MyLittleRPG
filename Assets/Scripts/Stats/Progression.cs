@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 namespace RPG.Stats
 {
@@ -5,24 +7,49 @@ namespace RPG.Stats
     public class Progression : ScriptableObject
     {
         [SerializeField] CharacterClassProgression[] characterClassesProgression = null;
-        
 
-        public float GetHealth(CharacterClass characterClass, int level)
+        Dictionary<CharacterClass, Dictionary<Stat, int[]>> progressionLookupDictionary = null;
+
+
+        public int GetStat(Stat stat,CharacterClass characterClass, int level)
         {
-            foreach (CharacterClassProgression itemProgression in characterClassesProgression) 
-            {
-                if(itemProgression.characterClass == characterClass)
-                {
-                    return itemProgression.health[level - 1];
-                }
-            }
-            return 0;
+            BuildLookupDictionary();
+            int[] levels = progressionLookupDictionary[characterClass][stat];
+            if (levels.Length < level) return 0;
+            return levels[level-1];
         }
+        public int GetLevels(Stat stat, CharacterClass characterClass)
+        {
+            BuildLookupDictionary();
+            int[] levels = progressionLookupDictionary[characterClass][stat];
+            return levels.Length;
+        }
+        private void BuildLookupDictionary()
+        {
+            if (progressionLookupDictionary != null) return;
+            progressionLookupDictionary = new Dictionary<CharacterClass, Dictionary<Stat, int[]>>();
+            foreach (CharacterClassProgression itemClassProgression in characterClassesProgression)
+            {
+                Dictionary<Stat, int[]> statLookupDictionary = new Dictionary<Stat, int[]>();
+                foreach (ProgressionStat stat in itemClassProgression.stats)
+                {
+                    statLookupDictionary[stat.stat] = stat.levels;
+                }
+                progressionLookupDictionary[itemClassProgression.characterClass] = statLookupDictionary;
+            }
+        }
+
         [System.Serializable]
         public class CharacterClassProgression
         {
             [SerializeField] public CharacterClass characterClass;
-            [SerializeField] public float[] health ;
+            [SerializeField] public ProgressionStat[] stats ;
+        }
+        [System.Serializable]
+        public class ProgressionStat
+        {
+            [SerializeField] public Stat stat;
+            [SerializeField] public int[] levels;
         }
     }
 }

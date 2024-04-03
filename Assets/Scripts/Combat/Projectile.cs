@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
     
     Health target;
     float damage = 0;
+    GameObject instigator = null;
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +30,11 @@ public class Projectile : MonoBehaviour
         
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
-    public void SetTarget(Health target, float damage)
+    public void SetTarget(Health target, GameObject instigator, float damage)
     {
         this.target = target;   
         this.damage = damage;
+        this.instigator = instigator;
         Destroy(gameObject,maxTimeAlive) ;
     }
     public void OnTriggerEnter(Collider other)
@@ -41,7 +43,7 @@ public class Projectile : MonoBehaviour
         if (target == other.GetComponent<Health>())
         {
            
-            target.TakingDamage(damage);
+            target.TakingDamage(instigator, damage);
             if(effectOnHit != null)
             {
                 Instantiate(effectOnHit, GetAimLocation(),transform.rotation);
