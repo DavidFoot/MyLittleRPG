@@ -24,6 +24,10 @@ namespace RPG.SceneManagement
         {
             GetComponent<SavingSystem>().Load(defaultFileName);
         }
+        public void Delete()
+        {
+            GetComponent<SavingSystem>().Delete(defaultFileName);
+        }
         // Update is called once per frame
         void Update()
         {
@@ -35,6 +39,11 @@ namespace RPG.SceneManagement
             {
                 Save();
                 Debug.Log("Call to Save function");
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                Delete();
+                Debug.Log("Call to Delete function");
             }
         }
     }
