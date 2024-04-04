@@ -5,6 +5,7 @@ using RPG.Movement;
 using RPG.Combat;
 using RPG.Attributes;
 using System;
+using UnityEngine.EventSystems;
 
 namespace RPG.Control
 {
@@ -16,7 +17,8 @@ namespace RPG.Control
         {
             Movement,
             Combat,
-            None
+            None,
+            UI
         }
         [System.Serializable]
         struct CursorMapping
@@ -43,11 +45,22 @@ namespace RPG.Control
         // Update is called once per frame
         void Update()
         {
-            if (health.IsDead()) { return; }
+            if (InterractWithUI()) { return; }
+            if (health.IsDead()) { SetCursor(CursorType.None); return; }
             if (InterractWithCombat()) return;
             if (InterractWithMovement()) return;
             SetCursor(CursorType.None);          
 
+        }
+
+        private bool InterractWithUI()
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                SetCursor(CursorType.UI);
+                return true;
+            }
+            return false;
         }
 
         private void SetCursor(CursorType type)
