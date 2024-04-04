@@ -4,12 +4,29 @@ using UnityEngine;
 using RPG.Movement;
 using RPG.Combat;
 using RPG.Attributes;
+using System;
 
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
         Health health;
+
+        enum CursorType
+        {
+            Movement,
+            Combat,
+            None
+        }
+        [System.Serializable]
+        struct CursorMapping
+        {
+            public CursorType type;
+            public Texture2D texture;
+            public Vector2 hotspot;
+        }
+
+        [SerializeField] CursorMapping[] cursorMappings = null;
         private void Awake()
         {
             health = GetComponent<Health>();
@@ -29,8 +46,25 @@ namespace RPG.Control
             if (health.IsDead()) { return; }
             if (InterractWithCombat()) return;
             if (InterractWithMovement()) return;
-            //Debug.Log("Not There, end of the World");           
+            SetCursor(CursorType.None);          
 
+        }
+
+        private void SetCursor(CursorType type)
+        {
+            CursorMapping cursorMapping = GetCursorMapping(type);
+            Cursor.SetCursor(cursorMapping.texture, cursorMapping.hotspot, CursorMode.Auto);
+        }
+        private CursorMapping GetCursorMapping(CursorType type)
+        {
+            foreach (CursorMapping mapping in cursorMappings)
+            {
+                if (mapping.type == type)
+                {
+                    return mapping;
+                }
+            }
+            return cursorMappings[0];
         }
 
         private bool InterractWithCombat()
@@ -48,6 +82,7 @@ namespace RPG.Control
                 {
                     GetComponent<Fighter>().Attack(target.gameObject);
                 }
+                SetCursor(CursorType.Combat);
                 return true;
             }
             return false;
@@ -63,8 +98,8 @@ namespace RPG.Control
                 if (Input.GetMouseButton(0))
                 {
                     GetComponent<Mover>().StartMoveAction(hit.point,1);
-                    return true;
                 }
+                SetCursor(CursorType.Movement);
                 return true;
             }
             else
