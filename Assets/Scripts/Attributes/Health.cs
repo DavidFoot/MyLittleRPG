@@ -2,20 +2,40 @@ using RPG.Saving;
 using RPG.Stats;
 using RPG.Core;
 using UnityEngine;
+using System;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 namespace RPG.Attributes
 {
     public class Health : MonoBehaviour, ISaveable
     {
         float health = -1f;
         bool isDead = false;
+        [SerializeField] float regenHealthPercentageOnLevelUp = 70f;
 
-        private void Start()
+        BaseStats stats = null;
+        private void Awake()
         {
+            stats = GetComponent<BaseStats>();
+        }
+        private void Start()
+        {            
             if (health < 0)
             {
-                health = GetComponent<BaseStats>().GetStat(Stat.Health);
+                health = stats.GetStat(Stat.Health);
             }
-            Debug.Log(this.name + ": " + health);
+        }
+        private void OnEnable()
+        {
+            stats.onLevelUp += RegenHealth;
+        }
+        private void OnDisable()
+        {
+            stats.onLevelUp -= RegenHealth;
+        }
+        private void RegenHealth()
+        {
+            float healthPointsToRegen = GetMaxHealth() * (regenHealthPercentageOnLevelUp/100);
+            health = MathF.Max(health, healthPointsToRegen);
         }
 
         public object CaptureState()
@@ -51,6 +71,7 @@ namespace RPG.Attributes
         }
         public void TakingDamage(GameObject instigator, float damage)
         {
+            print(this.name + " take : " + damage + " damage");
             if (health > 0)
             {
                 health = Mathf.Max(health - damage, 0f);

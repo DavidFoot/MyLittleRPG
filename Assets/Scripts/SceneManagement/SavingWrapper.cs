@@ -14,7 +14,6 @@ namespace RPG.SceneManagement
         }
         private IEnumerator LoadLastScene()
         {
-            Debug.Log("SavingWrapper Start");
             yield return GetComponent<SavingSystem>().LoadLastScene(defaultFileName);
         }
         IEnumerator Start()

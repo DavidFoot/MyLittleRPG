@@ -10,9 +10,17 @@ public class CinematicControlRemover : MonoBehaviour
 {
     // Start is called before the first frame update
     GameObject player;
-    void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+    private void OnDisable()
+    {
+        GetComponent<PlayableDirector>().played -= DisableControl;
+        GetComponent<PlayableDirector>().stopped -= EnableControl;
+    }
+    private void OnEnable()
+    {
         GetComponent<PlayableDirector>().played += DisableControl;
         GetComponent<PlayableDirector>().stopped += EnableControl;
     }

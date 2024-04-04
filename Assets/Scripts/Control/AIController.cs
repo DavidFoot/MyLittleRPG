@@ -22,14 +22,15 @@ namespace RPG.Control
 
         float timeSinceLastSawPlayer = Mathf.Infinity;
         float timeSinceWaypoint = Mathf.Infinity;
-
-
         Vector3 originPosition;
-        public void Start ()
+        private void Awake()
         {
             player = GameObject.FindWithTag("Player");
             fighter = gameObject.GetComponent<Fighter>();
+        }
 
+        public void Start ()
+        {
             originPosition = transform.position;
         }
         public bool IsInAttackRange()
@@ -75,7 +76,7 @@ namespace RPG.Control
             }
             if(timeSinceWaypoint > pauseBetweenWaypoint)
             {
-                fighter.GetComponent<Mover>().MoveTo(nextPosition, patrolSpeedFraction);
+                fighter.GetComponent<Mover>().StartMoveAction(nextPosition, patrolSpeedFraction);
             }
         }
 

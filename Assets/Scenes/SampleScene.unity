@@ -3688,6 +3688,10 @@ PrefabInstance:
       propertyPath: startingLevel
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8381773951908798365, guid: 2d37fcae0fa800c4790c376b9ab3d460, type: 3}
+      propertyPath: levelUpParticleEffect
+      value: 
+      objectReference: {fileID: 8201203774807635727, guid: 45606962c6005c54e99c598eb77fbf69, type: 3}
     m_RemovedComponents:
     - {fileID: 2939021679562188685, guid: 2d37fcae0fa800c4790c376b9ab3d460, type: 3}
     m_RemovedGameObjects: []

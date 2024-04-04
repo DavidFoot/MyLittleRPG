@@ -9,6 +9,11 @@ namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
+        Health health;
+        private void Awake()
+        {
+            health = GetComponent<Health>();
+        }
         private static Ray GetMouseRay()
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -21,7 +26,7 @@ namespace RPG.Control
         // Update is called once per frame
         void Update()
         {
-            if (GetComponent<Health>().IsDead()) { return; }
+            if (health.IsDead()) { return; }
             if (InterractWithCombat()) return;
             if (InterractWithMovement()) return;
             //Debug.Log("Not There, end of the World");           
